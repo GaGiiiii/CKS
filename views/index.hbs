@@ -1,0 +1,74 @@
+{{#if message}}
+  <div class="container-fluid mt-5">
+    <div class="alert alert-success">{{message}}</div>
+  </div>
+{{/if}}
+
+{{#if success}}
+  <div class="container-fluid mt-5">
+    <div class="alert alert-success">{{success}}</div>
+  </div>
+{{/if}}
+
+{{#if createdSong}}
+  <div class="container-fluid mt-5">
+    <div class="alert alert-success">{{createdSong}}</div>
+  </div>
+{{/if}}
+
+{{#if deletedSong}}
+  <div class="container-fluid mt-5">
+    <div class="alert alert-success">{{deletedSong}}</div>
+  </div>
+{{/if}}
+
+{{#if userRegistered}}
+  <div class="container-fluid mt-5">
+    <div class="alert alert-success">{{userRegistered}}</div>
+  </div>
+{{/if}}
+
+{{#if userLoggedOut}}
+  <div class="container-fluid mt-5">
+    <div class="alert alert-success">{{userLoggedOut}}</div>
+  </div>
+{{/if}}
+
+{{#if alreadyLoggedIn}}
+  <div class="container-fluid mt-5">
+    <div class="alert alert-danger">{{alreadyLoggedIn}}</div>
+  </div>
+{{/if}}
+
+<div class="container-fluid container-max-width mt-5">
+  <div class="row" id="row-for-movie-cards">
+
+    {{#each songs}}
+
+        <div class="col-md-8 offset-md-2 offset-sm-1 col-sm-10 card mb-3 mt-3">
+          <div class="card-border">
+            <a href="/song/{{this._id}}" class="card-header-link">
+              <h3 class="card-header">{{this.name}}</h3>
+            </a>
+            <div class="card-body">
+              {{!-- <h5 class="card-title">Lyrics</h5> --}}
+              {{!-- <h6 class="card-subtitle text-muted">Support card subtitle</h6> --}}
+            </div>
+            <a href="/song/{{this._id}}">
+              <img style="height: 500px; width: 100%; display: block;" src="{{this.image}}" alt="Card image">
+            </a>
+            <div class="card-body">
+              <p class="card-text"></p>
+              <i class="far fa-user"></i> Suggested By: <a href="/users/{{this.author._id}}">{{this.author.username}}</a><br>
+              <a href="/song/{{this._id}}" style="text-decoration: none;"><i class="fab fa-itunes-note"></i> Go To Lyrics</a>
+            </div>
+            <div class="card-footer dateDIVClass text-muted" id="dateDIV{{this._id}}" style="margin-top: .5rem;">
+              {{this.created_at}}
+            </div>
+          </div>
+        </div>
+
+    {{/each}}
+
+  </div>
+</div>

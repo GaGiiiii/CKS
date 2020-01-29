@@ -1,0 +1,18 @@
+
+  <div class="row">
+    <div class="col-md-8 offset-md-2" id="body-container">
+
+      User Profile For: {{user.username}} <hr>
+
+      {{#if user.songs}}
+
+        Songs That "{{user.username}}" Suggested: <br>
+
+        {{#each user.songs}}
+          <a href="/movie/{{this._id}}" style="text-decoration: none;">&nbsp; &nbsp; &bull; &nbsp;{{this.name}}</a><br>
+        {{/each}}
+      
+      {{/if}}
+
+    </div> 
+  </div>
