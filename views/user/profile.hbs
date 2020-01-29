@@ -9,7 +9,7 @@
         Songs That "{{user.username}}" Suggested: <br>
 
         {{#each user.songs}}
-          <a href="/movie/{{this._id}}" style="text-decoration: none;">&nbsp; &nbsp; &bull; &nbsp;{{this.name}}</a><br>
+          <a href="/song/{{this._id}}" style="text-decoration: none;">&nbsp; &nbsp; &bull; &nbsp;{{this.name}}</a><br>
         {{/each}}
       
       {{/if}}
